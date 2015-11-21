@@ -3,24 +3,12 @@
 #include <iostream>
 
 
-bool Item::isEmpty()
+bool Item::isEmpty(Item* item)
 {
-	
-
-
-
-
-	return true;
-
-	//if (sizeof(this) <= 32)
-	//{
-	//	//Item is null
-	//	return true;
-	//}
-	//else
-	//{
-	//	return false;
-	//}
+	if (&item == nullptr)
+		return true;
+	else
+		return false;
 }
 
 Item::Item(char* Name, int Strength)

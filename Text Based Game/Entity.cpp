@@ -23,11 +23,13 @@ void Entity::PickUp(Item item)
 {
 	_ItemCount++;
 
-	for (size_t i = 0; i <  _Inventory->size(); i++)
+	for (size_t i = 0; i < _MAXITEMCOUNT; i++)
 	{
-		if (&_Inventory[i] == nullptr)
+		if (_Inventory[i]->isEmpty(_Inventory[i]))
 		{
-			_Inventory[1].fill(item);
+			//std::cout << "Slot is empty. Adding " << item.GetName() << std::endl;
+			_Inventory[i] = &item;
+			break;
 		}
 	}
 }
@@ -83,11 +85,14 @@ void Entity::DisplayStats()
 
 void Entity::DisplayInventory()
 {
-	std::cout << "You are carrying " << _ItemCount << " item(s) out of 20:" << std::endl;
-	for (size_t i = 0; i < _Inventory->size(); i++)
+	std::cout << "You are carrying " << _ItemCount << " item(s) out of " << _MAXITEMCOUNT << ":" << std::endl;
+	for (size_t i = 0; i < _MAXITEMCOUNT; i++)
 	{
-		if(&_Inventory[i] == nullptr)
-			std::cout << _Inventory->at(i).GetName() << sizeof(_Inventory[i]) << std::endl;
+		if (!_Inventory[i]->isEmpty(_Inventory[i]))
+		{
+			//If there is an item then show
+			std::cout << _Inventory[i]->GetName() << std::endl;
+		}
 	}
 }
 
