@@ -5,7 +5,7 @@
 
 bool Item::isEmpty(Item* item)
 {
-	if (&item == nullptr)
+	if (item == nullptr)
 		return true;
 	else
 		return false;
