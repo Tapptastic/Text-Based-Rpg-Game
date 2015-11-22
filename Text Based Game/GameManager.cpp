@@ -15,13 +15,26 @@ void GameManager::Load()
 void GameManager::Save(Entity* player)
 {
 	std::ofstream level;
-	level.open(this->_LevelPath);
 	level << player->GetHealth();
 	level.close();
 }
 
 void GameManager::Battle(Entity& player, Entity enemies[])
 {
+}
+
+bool GameManager::GetIsRunning()
+{
+	return _IsRunning;
+}
+
+char GameManager::DetectInput()
+{
+	char input;
+	std::cin >> input;
+
+
+	return input;
 }
 
 GameManager::GameManager()

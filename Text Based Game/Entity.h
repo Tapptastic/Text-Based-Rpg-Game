@@ -44,6 +44,7 @@ public:
 	void DisplayInventory();
 	void Die();
 	void PickUp(Item item);
+	int GainExp(int expToBeGained);
 	int GetHealth();
 
 };
