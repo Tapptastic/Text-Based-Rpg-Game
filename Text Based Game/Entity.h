@@ -26,10 +26,12 @@ class Entity
 
 private:
 	int _Health, _Speed, _Defense, _Strength, _Lvl, _CurrentExp, _MaxExp, _Damage, _ItemCount;
+	static const int _MAXITEMCOUNT= 20;
 	char* _Name;
 	Class _Class;
 	Race _Race;
-	std::array<Item, 20>* _Inventory;
+	//std::array<Item, 20>* _Inventory;
+	Item* _Inventory[_MAXITEMCOUNT];
 
 	
 public:

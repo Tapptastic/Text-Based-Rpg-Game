@@ -7,7 +7,7 @@ private:
 	int  _Speed, _Defense, _Strength, _Lvl, _CurrentExp, _MaxExp, _Damage;
 
 public:
-	bool isEmpty();
+	bool isEmpty(Item* item);
 	Item(char* Name, int Strength);
 	Item();
 	~Item();
