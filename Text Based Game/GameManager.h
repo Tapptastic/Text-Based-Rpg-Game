@@ -1,16 +1,19 @@
 #pragma once
 #include "Entity.h"
 
-class GameManager
+static class GameManager
 {
 
 private:
 	const char* _LevelPath = "C:\temp\level.level";
+	static bool _IsRunning;
 
 public:
-	void Load();
-	void Save(Entity* playerStats);
-	void Battle(Entity& player, Entity enemies[]);
+	static void Load();
+	static void Save(Entity* playerStats);
+	static void Battle(Entity& player, Entity enemies[]);
+	static bool GetIsRunning();
+	static char DetectInput();
 
 	GameManager();
 	~GameManager();

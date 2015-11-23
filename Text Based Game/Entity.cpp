@@ -34,6 +34,11 @@ void Entity::PickUp(Item item)
 	}
 }
 
+int Entity::GainExp(int expToBeGained)
+{
+	return 0;
+}
+
 int Entity::GetHealth()
 {
 	return _Health;	
@@ -113,7 +118,7 @@ void Entity::Attack(Entity* Target)
 	//Check the current health of the target
 	if (Target->_Health <= 0)
 	{
-		std::cout << Target->_Name << " is dead... Well done!";
+		std::cout << Target->_Name << " has been killed... Well done!";
 
 		//Die();
 	}
